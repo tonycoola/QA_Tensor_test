@@ -5,7 +5,7 @@ from selenium.common.exceptions import NoSuchElementException
 element_rabotaem_selector = (By.XPATH,'//h2[contains(@class, "tensor_ru-header-h2") '
                                       'and contains(@class, "tensor_ru-About__block-title") and text()="Работаем"]')
 
-class Elements_Tensor_About(Main_Page) :
+class Elements_Tensor_About(Main_Page):
     def __init__(self, browser):
         super().__init__(browser)
 

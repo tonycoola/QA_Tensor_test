@@ -7,7 +7,7 @@ element_selector_sila_v_ludyah = (By.XPATH, '//p[contains(@class, "tensor_ru-Ind
 button_selecotr_podrobnee = (By.LINK_TEXT, 'Подробнее')
 button_selecotr_podrobnee_url = (By.XPATH, '//a[@href="/about"and text()="Подробнее"]')
 
-class Elements(Main_Page) :
+class Elements(Main_Page):
     def __init__(self, browser):
         super().__init__(browser)
 
