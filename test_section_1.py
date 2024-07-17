@@ -20,13 +20,16 @@ def test_buttons_sbis_section_1(browser):
 
 def test_elements_tensor_section_1(browser):
     browser_section_2 = Elements(browser)
+
     # 3.1 Переходим на /tensor
     browser_section_2.open_url_tensor()
+
     # 4 Проверяем наличие элемента Сила в Людях
     browser_section_2.element_sila_v_ludyah()
 
     # 5 Проверяем наличие Кнопки "Подробнее"
     assert browser_section_2.button_podrobnee().is_displayed()
+
     # Кликаем на кнопку "Подробнее"
     browser_section_2.button_podrobnee().click()
 
@@ -36,6 +39,7 @@ def test_elements_tensor_section_1(browser):
 
 def test_buttons_tensor_about_section_1(browser):
     browser_section_4 = Elements_Tensor_About(browser)
+
     # Переходим на tensor/about
     browser_section_4.open_url_tensor_about()
 
