@@ -21,7 +21,7 @@ class Elements(Main_Page) :
             assert element.is_displayed(), "Элемент присутствует, но не отображается."
         except NoSuchElementException:
             print("Элемент не найден на странице.")
-        #return self.find(element_selector_sila_v_ludyah)
+
 
     def button_podrobnee(self):
         return self.find(button_selecotr_podrobnee)

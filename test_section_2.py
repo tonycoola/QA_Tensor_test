@@ -9,6 +9,7 @@ def test_buttons_section_2 (browser):
     Buttons(browser).open_url_sbis_clients()
 
     # 2 Проверяем что подставился регион Ярослвской обл, Появился список партернов Ярославской обл., Клик на кнопку.
+
     assert Buttons(browser).button_yar_region_cheack().is_displayed()
     assert Buttons(browser).element_yar_partners_region_cheack().is_displayed()
     Buttons(browser).button_yar_region_cheack().click()

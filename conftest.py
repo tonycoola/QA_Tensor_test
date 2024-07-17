@@ -3,7 +3,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import os
 
-
 # Директория для сохранения файлов
 current_directory = os.path.dirname(os.path.abspath(__file__))  # Текущая рабочая директория скрипта
 download_directory = os.path.join(current_directory, "section_3_download_check")

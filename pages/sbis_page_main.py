@@ -8,7 +8,6 @@ import re
 local_versions_selector = (By.LINK_TEXT, 'Скачать локальные версии')
 save_windows_web_version_selector = (By.XPATH, '//a[contains(text(), "Скачать") and contains(text(), "Exe")]')
 save_windows_web_version_selector_on_PC = (By.XPATH,'//div [@class="sbis_ru-DownloadNew-loadLink"]')
-#save_windows_web_version_selector = (By.XPATH, '//a[@href="https://update.sbis.ru/Sbis3Plugin/master/win32/sbisplugin-setup-web.exe"]')
 file_name = "sbisplugin-setup-web.exe"
 
 class DownloadPage(Main_Page) :
@@ -39,7 +38,7 @@ class DownloadPage(Main_Page) :
 
     #Проверка веса файла
     def windows_web_version_wieght_check(self):
-        # expected_file_size_mb = 11.05
+
         #expected_file_size_text ищем текст 11.05
         expected_file_size_text = self.find(save_windows_web_version_selector).get_attribute('textContent')
 
