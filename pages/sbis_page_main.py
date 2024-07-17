@@ -38,19 +38,23 @@ class DownloadPage(Main_Page) :
 
     #Проверка веса файла
     def windows_web_version_wieght_check(self):
+        """
+        Метод сравнивает значение скаченого файла со значением указаным на сайте.
 
-        #expected_file_size_text ищем текст 11.05
+        """
+        #expected_file_size_text ищем текст размера скачиваемого файла
         expected_file_size_text = self.find(save_windows_web_version_selector).get_attribute('textContent')
 
         # Извлечение числового значения из текста
         match = re.search(r'(\d+\.\d+) МБ', expected_file_size_text)
-        # Извлекаем из группы 1 число в мб
+        # Извлекаем из группы 1 число в МБ
         expected_file_size_mb = float(match.group(1))
 
-        # Проверка размера файла
+        # Формируем имя искомого файла
         file_path = os.path.join(download_directory, file_name)
         #Переводим в МБ
         actual_file_size_mb = os.path.getsize(file_path)/ (1024 * 1024)
+        #Проверяем что различием между скаченными файлами меньше 1%
         assert abs(actual_file_size_mb - expected_file_size_mb) < 0.01, f"Размер файла не соответствует ожидаемому. " \
                                                                         f"Ожидалось: {expected_file_size_mb}, " \
                                                                         f"Получено: {actual_file_size_mb}"

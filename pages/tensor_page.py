@@ -16,17 +16,23 @@ class Elements(Main_Page) :
         sleep(3)
 
     def element_sila_v_ludyah(self):
+        """
+        Проверка эдемента "сила в людях" с доп пояснениями.
+        """
         try:
             element = self.find(element_selector_sila_v_ludyah)
             assert element.is_displayed(), "Элемент присутствует, но не отображается."
         except NoSuchElementException:
             print("Элемент не найден на странице.")
 
-
     def button_podrobnee(self):
         return self.find(button_selecotr_podrobnee)
 
     def button_podrobnee_url_cheack(self):
+        """
+        Метод проверяет переход на сайт tensor/about.
+        Происходит поиск сайта посредстовм перемещения по открытым окнам браузера.
+        """
         expected_url = "https://tensor.ru/about/"
         main_window = self.browser.current_window_handle
         windows = self.browser.window_handles
@@ -34,5 +40,5 @@ class Elements(Main_Page) :
             if window != main_window:
                 self.browser.switch_to.window(window)
                 break
-        assert self.browser.current_url == expected_url ,f"Ожидался URL: {expected_url}, но текущий URL: {self.browser.current_url}"
+        assert self.browser.current_url == expected_url, f"Ожидался URL: {expected_url}, но текущий URL: {self.browser.current_url}"
         self.browser.switch_to.window(main_window)

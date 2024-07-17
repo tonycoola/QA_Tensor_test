@@ -7,7 +7,7 @@ import os
 current_directory = os.path.dirname(os.path.abspath(__file__))  # Текущая рабочая директория скрипта
 download_directory = os.path.join(current_directory, "section_3_download_check")
 
-# Настройка параметров Chrome
+# Настройка параметров Chrome. Используем новую директорию для скачивания.
 chrome_options = Options()
 chrome_prefs = {
     "download.default_directory": download_directory,
@@ -16,7 +16,6 @@ chrome_prefs = {
     "safebrowsing.enabled": True
 }
 chrome_options.add_experimental_option("prefs", chrome_prefs)
-
 
 @pytest.fixture()
 def browser():

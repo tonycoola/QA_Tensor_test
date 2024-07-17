@@ -34,8 +34,10 @@ def test_elements_tensor_section_1 (browser):
     print("Тест /tensor секции 1 пройден")
 
 def test_buttons_tensor_about_section_1(browser):
+
     # Переходим на tensor/about
     Elements_Tensor_About(browser).open_url_tensor_about()
+
     #Проверяем наличие раздела "Работаем"
     assert Elements_Tensor_About(browser).element_rabotaem().is_displayed()
 

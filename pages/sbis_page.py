@@ -10,7 +10,7 @@ yar_region_selector = (By.XPATH,'//span[contains(@class, "sbis_ru-Region-Chooser
 button_selection_tensor_logo = (By.CLASS_NAME,'sbisru-Contacts__logo-tensor')
 
 
-class Buttons(Main_Page) :
+class Buttons(Main_Page):
     def __init__(self, browser):
         super().__init__(browser)
 
@@ -37,6 +37,11 @@ class Buttons(Main_Page) :
         return self.find(element_kamchatski_partners_region_selector)
 
     def button_tensor_logo_url_check(self):
+        """
+        Метод проверяет переход на сайт Тензор.
+        Происходит поиск сайта посредстовм перемещения по открытым окнам браузера.
+
+        """
         expected_url = "https://tensor.ru/"
         main_window = self.browser.current_window_handle
         windows = self.browser.window_handles
@@ -48,9 +53,13 @@ class Buttons(Main_Page) :
         self.browser.switch_to.window(main_window)
 
     def kamchatski_url_check(self):
-        assert "kamchatskij-kraj" in self.browser.current_url,f"Ожидался в URL: kamchatskij-kraj, но текущий URL: {self.browser.current_url}"
+        assert "kamchatskij-kraj" in self.browser.current_url, f"Ожидался в URL: kamchatskij-kraj, но текущий URL: {self.browser.current_url}"
 
     def check_title_contains(self):
+        """
+        Метод проверяет есть ли в заголовке браузера "Камчатский".
+        В противном случае вызыввется ошибка.
+        """
         try:
             title = self.browser.title
             assert "Камчатский" in title, f"Заголовок '{title}' не содержит Камчатский"

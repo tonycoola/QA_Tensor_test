@@ -15,8 +15,10 @@ class Elements_Tensor_About(Main_Page) :
     def element_rabotaem(self):
         return self.find(element_rabotaem_selector)
 
-
     def check_images_same_size(self):
+        """
+        Метод проверяет,что размеры картинок одинковы.
+        """
         # Список селекторов для всех картинок
         picture_selectors = [
             (By.XPATH, '//img[@alt="Продвигаем сервисы"]'),

@@ -1,18 +1,22 @@
 from time import sleep
 from pages.sbis_page import Buttons
 
-def test_buttons_section_2 (browser):
+def test_buttons_section_2(browser):
     # инициализируем сессию с классом и браузером
     Buttons(browser)
 
     # 1 Переходим по ссылке http/sbis/clients первого теста
     Buttons(browser).open_url_sbis_clients()
 
-    # 2 Проверяем что подставился регион Ярослвской обл, Появился список партернов Ярославской обл., Клик на кнопку.
-
+    # 2 Проверяем что подставился регион Ярослвской обл
     assert Buttons(browser).button_yar_region_cheack().is_displayed()
+
+    # Появился список партернов Ярославской обл
     assert Buttons(browser).element_yar_partners_region_cheack().is_displayed()
+
+    #Клик на кнопку Ярославской обл.
     Buttons(browser).button_yar_region_cheack().click()
+    #Ожидание 3 сек
     sleep(3)
 
     # 3 Изменяем кликом регион на Камчатский

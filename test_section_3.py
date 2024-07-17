@@ -2,7 +2,6 @@ from time import sleep
 from pages.sbis_page_main import DownloadPage
 
 def test_buttons_section_3 (browser):
-
     # инициализируем сессию с классом и браузером
     DownloadPage(browser)
 
