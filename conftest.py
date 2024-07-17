@@ -1,10 +1,12 @@
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+import os
 
 
 # Директория для сохранения файлов
-download_directory = "D:\Programs\pycharm\pycharmprogects\kulagin_tensor_test"
+current_directory = os.path.dirname(os.path.abspath(__file__))  # Текущая рабочая директория скрипта
+download_directory = os.path.join(current_directory, "section_3_download_check")
 
 # Настройка параметров Chrome
 chrome_options = Options()
